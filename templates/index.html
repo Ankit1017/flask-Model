@@ -14,7 +14,7 @@
             integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
             crossorigin="anonymous"></script>
         <link rel="stylesheet" href="css/styles.css">
-        <style> @import url('https://fonts.googleapis.com/css2?family=Rubik+Gemstones&family=Unbounded:wght@700&display=swap'); </style>
+        <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Pacifico&family=Rubik+Bubbles&family=Rubik+Gemstones&family=Unbounded:wght@700&display=swap" rel="stylesheet">
         <link rel="stylesheet"
             href="path/to/font-awesome/css/font-awesome.min.css">
         
@@ -45,11 +45,14 @@
     .a1{
         font-size: 2rem;
         font-weight: 200;
+        font-family: Pacifico;
+        text-align: center;
     }
     .a2{
         font-size: 1rem;
         font-weight: lighter;
         color: black;
+        font-family: Kaushan Script;
     }
     .a3{
         margin-top: 50px;
@@ -57,10 +60,15 @@
         font-weight: 200;
         text-align: center;
         color: #11999E;
+        font-family: Pacifico;
+        
     }
     .p3{
-        margin: 100px auto 0 auto;
+        margin: 100px auto 100px auto;
+        padding-bottom: 10px;
         width: 80%;
+        background-color: white;
+        border-radius: 2%;
     }
     .i{
         border-radius: 5%;
@@ -68,7 +76,7 @@
         width: 250px;
     }
     .f{
-        margin-bottom: 200px;
+        margin-bottom:100px;
         height: max-content;
     }
     .c1{
@@ -76,6 +84,69 @@
     }
     .c2{
         padding-right: 300px;
+    }
+    body{
+        background-image: url(https://images.pexels.com/photos/634548/pexels-photo-634548.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+
+    }
+    .g{
+        height: 50px;
+        background-color: #393E46;
+        text-align: center;
+        font-family: Unbounded;
+        font-style: normal;
+    }
+    .d{
+        font-size: 50px;
+    }
+
+
+
+
+
+
+    .contact{
+		padding: 4%;
+		height: 400px;
+        margin-bottom: 100px;
+	}
+	.col-md-3{
+		background: #00ADB5;
+		padding: 4%;
+		border-top-left-radius: 0.5rem;
+		border-bottom-left-radius: 0.5rem;
+        margin-bottom: 100px;
+        margin-left: 115px;
+        font-family: Pacifico;
+	}
+	.contact-info{
+		margin-top:10%;
+	}
+	.contact-info img{
+		margin-bottom: 15%;
+	}
+	.contact-info h2{
+		margin-bottom: 10%;
+	}
+	.col-md-6{
+		background: #fff;
+		padding: 3%;
+		border-top-right-radius: 0.5rem;
+		border-bottom-right-radius: 0.5rem;
+        margin-bottom: 100px;
+        font-family: Kaushan Script;
+	}
+	.contact-form label{
+		font-weight:600;
+	}
+	.contact-form button{
+		background: #393E46;
+		color: #fff;
+		font-weight: 600;
+		width: 25%;
+	}
+	.contact-form button:focus{
+		box-shadow:none;
     }
     </style>
 
@@ -123,7 +194,7 @@
 
         <div class="container">
             <div class="p3">
-                <h1 class="a1" style="text-align: center;">My Projects.</h1>
+                <h1 class="a1" >My Projects.</h1>
                 <div class="f f1 container">
                     <div class="col-mb-12"><a href="{{ url_for('Image')}}"><img src="https://i.ibb.co/9gR2nbk/i1.jpg" alt="i1" border="0" class="i5 i"></a></div>
                     
@@ -153,6 +224,65 @@
 
             </div>
         </div>
+            
+            <div>
+                <div class="container contact">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="contact-info">
+                                <img src="https://image.ibb.co/kUASdV/contact-image.png" alt="image"/>
+                                <h2>Contact Us</h2>
+                                <h4>We would love to hear from you !</h4>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="contact-form">
+                                <form action="mailto:bansala271@gmail.com" method="post">
+                                <div class="form-group">
+                                  <label class="control-label col-sm-2" for="fname">Name:</label>
+                                  <div class="col-sm-10">          
+                                    <input type="text" class="form-control" id="fname" placeholder="Enter First Name" name="fname">
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label class="control-label col-sm-2" for="email">Email:</label>
+                                  <div class="col-sm-10">
+                                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label class="control-label col-sm-2" for="comment">Comment:</label>
+                                  <div class="col-sm-10">
+                                    <textarea class="form-control" rows="5" id="comment"></textarea>
+                                  </div>
+                                </div>
+                                <div class="form-group">        
+                                  <div class="col-sm-offset-2 col-sm-10">
+                                    <button type="submit" class="btn btn-default">Submit</button>
+                                  </div>
+                                </div>
+                            </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="g">
+                <a  href="#"><i class="fa fa-angle-double-up d" aria-hidden="true"></i></a>
+            </div>
+
+
+
+
+
+
+
+
+
+        
+
+        
 
 
 
@@ -166,10 +296,11 @@
 
 
 
-
-
-
-
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
         <script src="https://kit.fontawesome.com/34d8446a67.js"
             crossorigin="anonymous"></script>
     </body>
