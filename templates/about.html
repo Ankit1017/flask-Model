@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Friends</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous">
+<script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"></script>
+
+      <style> @import url('https://fonts.googleapis.com/css2?family=Rubik+Gemstones&family=Unbounded:wght@700&display=swap'); </style>
+      <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+      <script src="https://kit.fontawesome.com/34d8446a67.js"
+        crossorigin="anonymous"></script>
+</head>
+
+<style>
+  
+  
+  #regForm {
+      background-color: #fff;
+      background-size: cover;
+      background-origin: unset;
+      margin: 0px auto;
+      font-family: Raleway;
+      padding: 40px;
+      border-radius: 10px
+      
+  }
+  
+  #register{
+  
+    color: #222831;
+  }
+  
+  h1 {
+      text-align: center
+  }
+  
+  input {
+      padding: 10px;
+      width: 100%;
+      font-size: 17px;
+      font-family: Raleway;
+      border: 1px solid #aaaaaa;
+      border-radius: 10px;
+      -webkit-appearance: none;
+  }
+  
+  
+  
+  .tab input:focus{
+  
+    border:1px solid #222831 !important;
+    outline: none;
+  }
+  
+  input.invalid {
+   
+      border:1px solid #e03a0666;
+  }
+  
+  .tab {
+      display: none
+  }
+  
+  button {
+      background-color: #222831;
+      color: #ffffff;
+      border: none;
+      border-radius: 50%;
+      padding: 10px 20px;
+      font-size: 17px;
+      font-family: Raleway;
+      cursor: pointer
+  }
+  
+  button:hover {
+      opacity: 0.8
+  }
+  
+  button:focus{
+  
+    outline: none !important;
+  }
+  
+  #prevBtn {
+      background-color: #bbbbbb
+  }
+  
+  
+  .all-steps{
+        text-align: center;
+      margin-top: 30px;
+      margin-bottom: 30px;
+      width: 100%;
+      display: inline-flex;
+      justify-content: center;
+  }
+  
+  .step {
+         height: 40px;
+      width: 40px;
+      margin: 0 2px;
+      background-color: #bbbbbb;
+      border: none;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 15px;
+      color: #393E46;
+      opacity: 0.5;
+  }
+  
+  .step.active {
+      opacity: 1
+  }
+  
+  
+  .step.finish {
+     color: #fff;
+     background: #222831;
+     opacity: 1;
+  
+  }
+  
+  
+  
+  .all-steps {
+      text-align: center;
+      margin-top: 30px;
+      margin-bottom: 30px
+  }
+  
+  .thanks-message {
+      display: none
+  }
+  .select-image {
+    display: block;
+    width: 100%;
+    padding: 16px 0;
+    border-radius: 15px;
+    background: var(--blue);
+    color: #fff;
+    font-weight: 500;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: all .3s ease;
+  }
+  .select-image:hover {
+    background: var(--dark-blue);
+  }
+  .viewport-header {
+    position: relative;
+    height: 100vh;
+    text-align: center;
+    
+    align-items: center;
+    justify-content: center;
+  }
+  video {
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  .step1 {
+    height: 40px;
+ width: 40px;
+ margin: 0 2px;
+ background-color: #bbbbbb;
+ border: none;
+ border-radius: 50%;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ font-size: 25px;
+ 
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <style>
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  :root {
+    --blue: #0071FF;
+    --light-blue: #B6DBF6;
+    --dark-blue: #005DD1;
+    --grey: #f2f2f2;
+  }
+  
+  body {
+    align-items: center;
+    min-height: 100vh;
+    background: var(--light-blue);
+  }
+  
+  
+  .a {
+    max-width: 400px;
+    width: 100%;
+    background: #fff;
+    padding: 30px;
+    border-radius: 30px;
+    margin-top: 20px;
+    padding-top: 2.5rem;
+  }
+
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+ 
+ 
+  .login { 
+      
+      margin: 10px auto 0 auto;
+      text-align: center;
+      width:400px;
+      height:400px;
+  }
+  
+  .login h1 { color: #fff; text-shadow: 0 0 10px rgba(0,0,0,0.3); letter-spacing:1px; text-align:center; }
+  
+ 
+  .select-image {
+    display: block;
+    width: 100%;
+    padding: 16px 0;
+    border-radius: 15px;
+    background: var(--blue);
+    color: #fff;
+    font-weight: 500;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: all .3s ease;
+  }
+  .select-image:hover {
+    background: var(--dark-blue);
+  }
+  </style> -->
+  
+<body>
+  <video playsinline autoplay muted loop poster="https://cdn.dribbble.com/userupload/2641318/file/original-acb4028ea187f7e6472cdb7839d8b953.jpg?compress=1&resize=1200x900" id="bgvid" >
+    <source src="D:\projects\combine\Finance.mp4" type="video/mp4">
+  </video>
+  <header class="viewport-header">
+  <section id="title" style="background-color: #393E46;">
+    <div class="container">
+        <!-- Nav Bar -->
+        <nav class="navbar navbar-expand-lg navbar-dark">
+          
+            <div class="container-lg">
+              <span class="step1"><i class="fa-sharp fa-solid fa-microchip"></i></span>
+                <a class="navbar-brand" href="#">ML Models</a>
+                <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarTogglerDemo02"
+                    aria-controls="navbarTogglerDemo02"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse"
+                    id="navbarTogglerDemo02">
+                    <ul class="navbar-nav ms-auto ">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('index')}}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            
+                            <a class="nav-link" href="{{ url_for('Image')}}">Image Recognition Model</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('friend')}}">Friend C**t**</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+  </section>
+
+  
+  
+    
+    <div class="container mt-5 ">
+      <div class="row d-flex justify-content-center align-items-center">
+          <div class="col-md-8" id="regForm">
+              
+                  <h1 id="register">Salary Prediction Model</h2>
+                  <h5 id="register" style="text-align: center;">Fill some required data..</h4>
+                  <div class="all-steps" id="all-steps"> 
+                    <span class="step"><i class="fa fa-user"></i></span> 
+                    <span class="step"><i class="fa-solid fa-square-poll-vertical"></i></span>
+                    <span class="step"><i class="fa-regular fa-diagram-project"></i></span>
+                    <span class="step"><i class="fa-solid fa-circle-exclamation"></i></span>
+                    <span class="step"><i class="fa-solid fa-user-doctor"></i></span>
+                  </div>
+  
+                  <div class="tab">
+                    <h6>What's your name?</h6>
+                      <p>
+                        <input placeholder="Name..." oninput="this.className = ''" name="fname"></p>
+                      
+                  </div>
+                  <form action="/about/predict"method="POST">
+                  <div class="tab">
+                    <h6>Tell me your average CGPA</h6>
+                      <p><input placeholder="CGPA" oninput="this.className = ''" name="hf"></p>
+                      
+                  </div>
+                  <div class="tab">
+                      <h6>Number of Project DONE!!!!</h6>
+                      <p><input placeholder="Github check kar le" oninput="this.className = ''" name="uf"></p>
+                   
+                  </div>
+                  <div class="tab">
+                    <h6>Number of Backs</h6>
+                    <p><input placeholder="Kitne subjects me fail hoa hai abhi tak" oninput="this.className = ''" name="ud"></p>
+                  </div>
+                  
+
+                  <div class="thanks-message text-center" id="text-message">
+                      <h6>Number of Internship DONE!!!!</h6>
+                      <p><input placeholder="Pehle resume bana to le" oninput="this.className = ''" name="8r"></p>
+                      <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+                  </div>
+              </form>
+                  
+                  <div style="overflow:auto;" id="nextprevious">
+                      <div style="float:right;">
+                        <button type="button" id="prevBtn" onclick="nextPrev(-1)"><i class="fa fa-angle-double-left"></i></button> 
+                        <button type="button" id="nextBtn" onclick="nextPrev(1)"><i class="fa fa-angle-double-right"></i></button> </div>
+                  </div>
+                  <h5 style="text-align: center;">{{ pred }}</h5> 
+              
+          </div>
+            
+          
+      </div>
+  </div>
+  </header>
+  
+
+
+
+
+<script>
+    var currentTab = 0;
+          document.addEventListener("DOMContentLoaded", function(event) {
+
+
+          showTab(currentTab);
+
+          });
+
+          function showTab(n) {
+          var x = document.getElementsByClassName("tab");
+          x[n].style.display = "block";
+          if (n == 0) {
+          document.getElementById("prevBtn").style.display = "none";
+          } else {
+          document.getElementById("prevBtn").style.display = "inline";
+          }
+          if (n == (x.length - 1)) {
+          document.getElementById("nextBtn").innerHTML = '<i class="fa fa-angle-double-right"></i>';
+          } else {
+          document.getElementById("nextBtn").innerHTML = '<i class="fa fa-angle-double-right"></i>';
+          }
+          fixStepIndicator(n)
+          }
+
+          function nextPrev(n) {
+          var x = document.getElementsByClassName("tab");
+          if (n == 1 && !validateForm()) return false;
+          x[currentTab].style.display = "none";
+          currentTab = currentTab + n;
+          if (currentTab >= x.length) {
+        
+          document.getElementById("nextprevious").style.display = "none";
+          document.getElementById("all-steps").style.display = "flex";
+          document.getElementById("register").style.display = "block";
+          document.getElementById("text-message").style.display = "block";
+
+
+
+
+          }
+          showTab(currentTab);
+          }
+
+          function validateForm() {
+               var x, y, i, valid = true;
+               x = document.getElementsByClassName("tab");
+               y = x[currentTab].getElementsByTagName("input");
+               for (i = 0; i < y.length; i++) {
+                   if (y[i].value == "") {
+                       y[i].className += " invalid";
+                       valid = false;
+                   }
+
+
+               }
+               if (valid) {
+                   document.getElementsByClassName("step")[currentTab].className += " finish";
+               }
+               return valid;
+           }
+
+           function fixStepIndicator(n) {
+               var i, x = document.getElementsByClassName("step");
+               for (i = 0; i < x.length+1; i++) {
+                   x[i].className = x[i].className.replace(" active", "");
+               }
+               x[n].className += " active";
+           }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!-- <div class="login container a" style="height: max-content;">
+	<h2>Is Your Friend Ch*tiya ?</h2>
+  <h4>Fill some required data..</h4>
+    
+     <div class="md-form">
+      <label for="form1">Name</label>
+      <input type="text" id="form1" name="name" class="form-control" required>
+      
+    </div>
+    <form action="/friend/predict2"method="POST">
+
+      <div class="md-form">
+        <label for="form1">Age</label>
+        <input type="text" name="Age" id="form1" class="form-control" required>
+        
+      </div>
+      <div class="md-form">
+        <label for="form1">How many Studying hours ?</label>
+        <input type="text" name="hrs" id="form1" class="form-control" required>
+        
+      </div>
+      <br>
+      <div class="input-group mb-6">
+        <select class="custom-select" id="inputGroupSelect02" name="sp" style="width: 12rem;" required>
+          <option selected>Choose...</option>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select>
+        <div class="input-group-append" style="margin-left: 10px;">
+          <label class="input-group-text" for="inputGroupSelect02">Abuser</label>
+        </div>
+      </div>
+      <br>
+      <div class="input-group mb-3" >
+        <select class="custom-select" id="inputGroupSelect02" name="rel" style="width: 12rem;" required>
+          <option selected>Choose...</option>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select>
+        <div class="input-group-append" style="margin-left: 10px;">
+          <label class="input-group-text" for="inputGroupSelect02">In Relationship</label>
+        </div>
+      </div>
+
+        <button type="submit" class="btn btn-primary btn-block btn-large select-image">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ pred }}
+  </br>
+   {{ bhai }}
+
+ </div> -->
+
+
+
+
+
+
+
+</body>
+</html>

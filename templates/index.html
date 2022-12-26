@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>ML Models</title>
+        <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+            crossorigin="anonymous">
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+            crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="css/styles.css">
+        <style> @import url('https://fonts.googleapis.com/css2?family=Rubik+Gemstones&family=Unbounded:wght@700&display=swap'); </style>
+        <link rel="stylesheet"
+            href="path/to/font-awesome/css/font-awesome.min.css">
+        
+    </head>
+    <style>
+        .step {
+         height: 40px;
+         width: 40px;
+         margin: 0 2px;
+         background-color: #bbbbbb;
+         border: none;
+         border-radius: 50%;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         font-size: 25px;
+     }
+     .i5{
+        width: 40%;
+        float: left;
+        
+    }
+    .i6{
+        width: 40%;
+        float: right;
+        
+    }
+    .a1{
+        font-size: 2rem;
+        font-weight: 200;
+    }
+    .a2{
+        font-size: 1rem;
+        font-weight: lighter;
+        color: black;
+    }
+    .a3{
+        margin-top: 50px;
+        font-size: 1.5rem;
+        font-weight: 200;
+        text-align: center;
+        color: #11999E;
+    }
+    .p3{
+        margin: 100px auto 0 auto;
+        width: 80%;
+    }
+    .i{
+        border-radius: 5%;
+        height: 150px;
+        width: 250px;
+    }
+    .f{
+        margin-bottom: 200px;
+        height: max-content;
+    }
+    .c1{
+        padding-left: 300px;
+    }
+    .c2{
+        padding-right: 300px;
+    }
+    </style>
+
+    <body>
+
+        <section id="title" style="background-color: #393E46;">
+            <div class="container">
+                <!-- Nav Bar -->
+                <nav class="navbar navbar-expand-lg navbar-dark">
+                    
+                    <div class="container-lg">
+                        <span class="step"><i class="fa-sharp fa-solid fa-microchip"></i></span>
+                        <a class="navbar-brand" href="#">ML Models</a>
+                        <button class="navbar-toggler" type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#navbarTogglerDemo02"
+                            aria-controls="navbarTogglerDemo02"
+                            aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse"
+                            id="navbarTogglerDemo02">
+                            <ul class="navbar-nav ms-auto ">
+                                <li class="nav-item">
+                                    
+                                    <a class="nav-link" href="{{ url_for('Image')}}">Image Recognition Model</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ url_for('friend')}}">Check Friend C**t**</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ url_for('about')}}">Salary Prediction Model</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </section>
+
+
+
+
+
+        <div class="container">
+            <div class="p3">
+                <h1 class="a1" style="text-align: center;">My Projects.</h1>
+                <div class="f f1 container">
+                    <div class="col-mb-12"><a href="{{ url_for('Image')}}"><img src="https://i.ibb.co/9gR2nbk/i1.jpg" alt="i1" border="0" class="i5 i"></a></div>
+                    
+                    <div class="container c1">
+                        <h1 class="a3"><a class="nav-link" href="{{ url_for('Image')}}">Image Recognition Model</a></h1>
+                        <p class="a2">It is a convolutional neural network ( CNN ) which is a type of neural network for working with images, This type of neural network takes input from an image and extract features from an image and provide learnable parameters to efficiently do the classification, detection and a lot more tasks.<br><a href=""><i class="fa-brands fa-github"></i></a> </p>
+                    </div>
+                    
+                </div>
+                <div class="f f2 container">
+                    <div class="col-mb-12"><a href="{{ url_for('friend')}}"><img src="https://i.ibb.co/Wfw25hH/i2.jpg" alt="i2" border="0" class="i6 i"></a></div>
+                    
+                    <div class="container c2">
+                        <h1 class="a3"><a class="nav-link" href="{{ url_for('friend')}}">Check Friend C**t**</a></h1>
+                        <p class="a2">It is a linear regression which is one of the easiest and most popular Machine Learning algorithms. It is a statistical method that is used for predictive analysis. Linear regression makes predictions for continuous/real or numeric variables such as sales, salary, age, product price, etc. <br><a href=""><i class="fa-brands fa-github"></i></a> </p>
+                    </div>
+                    
+                </div>
+                <div class="f f3 container">
+                    <div class="col-mb-12"><a href="{{ url_for('about')}}"><img src="https://i.ibb.co/3kx56Xz/i3.jpg" alt="i3" border="0" class="i5 i"></a></div>
+                    
+                    <div class="container c1">
+                        <h1 class="a3"><a class="nav-link" href="{{ url_for('about')}}">Salary Prediction Model</a></h1>
+                        <p class="a2"> It is a Random Forest model which is a Supervised Machine Learning Algorithm that is used widely in Classification and Regression problems. It builds decision trees on different samples and takes their majority vote for classification and average in case of regression. <br><a href=""><i class="fa-brands fa-github"></i></a> </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <script src="https://kit.fontawesome.com/34d8446a67.js"
+            crossorigin="anonymous"></script>
+    </body>
+</html>
