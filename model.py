@@ -1,5 +1,5 @@
 import numpy as np
-from keras.preprocessing import image
+from keras.utils import load_img,img_to_array
 from keras.models import load_model
 from keras import backend
 import tensorflow as tf
@@ -12,8 +12,8 @@ set_session(sess)
 
 
 def result_str(img_path):
-    test_image = image.load_img(img_path, target_size = (64, 64))
-    test_image = image.img_to_array(test_image)
+    test_image = load_img(img_path, target_size = (64, 64))
+    test_image = img_to_array(test_image)
     test_image = np.expand_dims(test_image, axis = 0)
     with graph.as_default():
         set_session(sess)
